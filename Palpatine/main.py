@@ -278,7 +278,7 @@ class SentimentIntensityAnalyzer:
         for line in self.lexicon_file.split("\n"):
             if len(line) < 2:
                 continue
-            (word, measure) = line.strip().split("\t")[0:2]
+            (word, measure) = line.strip().split("+")[0:2]
             lex_dict[word] = float(measure)
         return lex_dict
 
@@ -586,13 +586,11 @@ class SocialTension:
         return result
 
 if __name__ == '__main__':
-    sentence = "polak"
-    L = []
-    L.append('polak musi się spytać pana pohla')
-    L.append('kaleta')
-    L.append('Pohl to ziom')
+    tweets = []
+    df = pd.read_csv('output1.csv')
+    for index, text in df.iterrows():
+        tweets.append(df['text'][index])
     analyzer = SentimentIntensityAnalyzer()
-    tension = SocialTension(L)
-
+    tension = SocialTension(tweets)
     result = tension.measure_tension()
-    print(result)
+    result.to_csv('tweets_sentiments.csv', index=False)
