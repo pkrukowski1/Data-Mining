@@ -7,7 +7,10 @@ class SentiText:
 
     def __init__(self, text, punc_list, regex_remove_punctuation):
         if not isinstance(text, str):
-            text = str(text.encode("utf-8"))
+            try:
+                text = str(text.encode("utf-8"))
+            except AttributeError:
+                text=''
         self.text = text
         self.PUNC_LIST = punc_list
         self.REGEX_REMOVE_PUNCTUATION = regex_remove_punctuation
