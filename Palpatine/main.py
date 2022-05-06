@@ -26,10 +26,9 @@ from itertools import product
 import pandas as pd
 import re
 import string
-import morfeusz2
 import nltk
 import nltk.data
-from nltk.util import pairwise
+from nltk.tokenize import RegexpTokenizer
 
 
 class VaderConstants:
@@ -501,54 +500,7 @@ class SocialTension:
     """
 
     def __init__(self, text_array):
-        self.text_array = pd.DataFrame(text_array, columns=['Text_array'])['Text_array'].apply(lambda x : self.lemme_lemmatize(x))
-
-    def remove_digits_from_words(self, text):
-        numbers = [str(i) for i in range(0, 10)]
-        letters = list(string.ascii_lowercase)
-        for word in text.split():
-            for num in numbers:
-                for letter in letters:
-                    if num in word and letter in word:
-                        new_word = re.split('(\d+)', word)[0]
-                        text = text.replace(word, new_word, 1)
-        return text
-
-    def no_puncs(self, tweet):
-        tweet_done = tweet.translate(str.maketrans('', '', string.punctuation)).lower()
-        return tweet_done
-
-    def make_list(self, string):
-        mylist = string.split()
-        return mylist
-
-    def remove_duplicates(self, text):
-        new_text = []
-        for word in text.split():
-            if ":" in word:
-                word_halves = word.split(':')
-                word = word_halves[0]
-                new_text.append(word)
-            else:
-                new_text.append(word)
-        mylist = list(dict.fromkeys(new_text))
-        mylist = ' '.join(mylist)
-        return mylist
-
-    def lemme_lemmatize(self, text):
-        done_text = []  # miejsce na output
-        text = text.lower()  # konwersja na małe znaki
-        text = self.no_puncs(text)  # usunięcie interpunkcji
-        text = self.remove_digits_from_words(text)  # usunięcie cyfr złączonych ze słowami
-
-        morf = morfeusz2.Morfeusz()  # stworzenie obiektu morfeusza
-        analysis = morf.analyse(text)  # stworzenie obiektu analizującego na bazie textu
-        for i, j, interp in analysis:
-            done_text.append(interp[1])  # dodanie lematu do outputu
-        done_text = ' '.join(done_text)  # przerobienie outputu na stringa
-        done_text = self.remove_duplicates(done_text)  # usunięcie zduplikowanych lematów
-        #     done_text = make_list(done_text) # opcjonalnie, zwraca output jako listę
-        return done_text
+        self.text_array = pd.DataFrame(text_array, columns=['Text_array'])['Text_array'].apply(lambda x : x)
 
     def sentiment_scores(self, sentence):
         """
@@ -587,7 +539,7 @@ class SocialTension:
 
 if __name__ == '__main__':
     tweets = []
-    df = pd.read_csv('output1.csv')
+    df = pd.read_csv('lemmatized_data.csv', encoding='utf-8')
     for index, text in df.iterrows():
         tweets.append(df['text'][index])
     analyzer = SentimentIntensityAnalyzer()
