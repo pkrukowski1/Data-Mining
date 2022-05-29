@@ -7,13 +7,13 @@ Marcin Świątkowski
 Patryk Krukowski
 Miłosz Włoch
 
-## Twitter Sentiment Analysis in Polish 
-# Introduction
+# Twitter Sentiment Analysis in Polish 
+## Introduction
 The purpose of our project is to analyze tweets from Twitter with regards to a sentimental analysis. We collect tweets linked to a social tension in Poland caused by the war in the Ukraine. We want to do that by assigning a value one for tweets indicating positive emotions, a value zero in the case of lack of emotions, and a value minus one for tweets indicating negative emotions. This goal can be achieved by using a modification of the Vader algorithm which was created by Hutto, C.J. & Gilbert, E.E. (2014). The key concept of the modification of the Vader algorithm was to provide the functionality of the original Vader algorithm, but in Polish language.
 
-#Contents:
-RT_ukraine_graphs.ipynb - Jupyter notebook to social networks analysis,
-SentiText.py - identifying sentiment-relevant string-level properties of input text,
+## Contents:
+* RT_ukraine_graphs.ipynb - Jupyter notebook to social networks analysis,
+* SentiText.py - identifying sentiment-relevant string-level properties of input text,
 SentimentIntensityAnalyzer.py - giving a sentiment intensity score to sentences,
 VaderConstants.py - a class to keep the Vader lists and constants,
 main.py - Python file with a drive function,
