@@ -89,7 +89,7 @@ title - a title of the plot; default is equal to ‘Tweets’
 
 x_axis - a name of the OX axis
 - output: a plot from the Plotly library
-#Social networks analysis
+Social networks analysis
 The social network analysis is stored in “RT_ukraine_graphs.ipynb” jupyter notebook. It contains analysis of network graphs, network motifs and sentimental distribution of information. Used declared functions:
 ((networkx graph is the input of each of these functions))
 
