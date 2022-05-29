@@ -1,5 +1,7 @@
 AGH University of Science and Technology in Cracow
+
 MSc Data Science Project
+
 Data Mining Course
 
 Contributors:
