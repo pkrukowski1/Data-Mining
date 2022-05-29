@@ -14,26 +14,26 @@ The purpose of our project is to analyze tweets from Twitter with regards to a s
 ## Contents:
 * RT_ukraine_graphs.ipynb - Jupyter notebook to social networks analysis,
 * SentiText.py - identifying sentiment-relevant string-level properties of input text,
-SentimentIntensityAnalyzer.py - giving a sentiment intensity score to sentences,
-VaderConstants.py - a class to keep the Vader lists and constants,
-main.py - Python file with a drive function,
-SocialTension.py - a class to assign 1, 0 or -1 value in context of sentiment,
-Time_series_analysis.ipynb - Jupyter notebook to time series analysis,
-cleaned_data.csv - data cleaning for tweets (regexs),
-create_clusters.ipynb - location clusters of tweets,
-create_word_cloud.ipynb - creating word cloud of given hashtags,
-data_cleaning.ipynb - Jupyter notebook to filter the dataset,
-get_tweets.ipynb - getting tweets with usage of Twitter API,
-lemmatize_tweets.ipynb - used for tweets lemmatizing that is needed to get better output in Vader algorithm,
-lemmatized_data.csv - lemmatized tweets’ text
-output1.csv - all the gathered tweet data
-pl.csv - coordinates of polish cities,
-translate_words.ipynb - Jupyter notebook to translate tweets,
-tweets_sentiments.csv - consists of tweets’ content and their sentiments,
-ukraine-flag-national-europe-emblem-map-icon-illustration - a photo for word cloud
-vader_lexicon_translated.txt - dictionary with polish words and emoticons with associated weights, 
-odm.txt (https://sjp.pl/sl/odmiany/) - includes every form of polish words
-#Data preprocessing
+* SentimentIntensityAnalyzer.py - giving a sentiment intensity score to sentences,
+* VaderConstants.py - a class to keep the Vader lists and constants,
+* main.py - Python file with a drive function,
+* SocialTension.py - a class to assign 1, 0 or -1 value in context of sentiment,
+* Time_series_analysis.ipynb - Jupyter notebook to time series analysis,
+* cleaned_data.csv - data cleaning for tweets (regexs),
+* create_clusters.ipynb - location clusters of tweets,
+* create_word_cloud.ipynb - creating word cloud of given hashtags,
+* data_cleaning.ipynb - Jupyter notebook to filter the dataset,
+* get_tweets.ipynb - getting tweets with usage of Twitter API,
+* lemmatize_tweets.ipynb - used for tweets lemmatizing that is needed to get better output in Vader algorithm,
+* lemmatized_data.csv - lemmatized tweets’ text
+* output1.csv - all the gathered tweet data
+* pl.csv - coordinates of polish cities,
+* translate_words.ipynb - Jupyter notebook to translate tweets,
+* tweets_sentiments.csv - consists of tweets’ content and their sentiments,
+* ukraine-flag-national-europe-emblem-map-icon-illustration - a photo for word cloud
+* vader_lexicon_translated.txt - dictionary with polish words and emoticons with associated weights, 
+* odm.txt (https://sjp.pl/sl/odmiany/) - includes every form of polish words
+## Data preprocessing
 Downloading tweets:
 We downloaded tweets using Twitter API. We choose these categories:  
 tweet_id
