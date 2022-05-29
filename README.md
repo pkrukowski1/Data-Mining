@@ -56,7 +56,7 @@ information whether user is verified or not
 
 After we collected all the required data we needed to translate tweets’ text into polish language (translate_words.ipynb). Our algorithm uses odm.txt to lemmatize tweets (lemmatize_tweets.ipynb). The Odm.txt file consists of plenty of different Polish words with all of their forms. As we processed our data, then we could use the modified Vader algorithm to obtain tweets sentiments: –1 for negative sentiment, 0 for neutral one and 1 for positive one. The output of the algorithm was saved into the tweets_sentiments.csv file. 
 
-#Executed Vader algorithm modifications
+## Executed Vader algorithm modifications
 To achieve more information about how the Vader algorithm works please be sure to visit the following website: https://www.nltk.org/_modules/nltk/sentiment/vader.html
 It was required to prepare this list of changes:
 2.1. VaderConstants class:
@@ -74,7 +74,7 @@ measure_tension - measures tension for class attribute text_array:
 -  input: -,
 - output: pandas DataFrame.
 	2.5. Function main() - driver function.
-#Time series analysis
+## Time series analysis
 The time series analysis is stored in the  “Time_series_analysis.ipynb” jupyter notebook. There is an analysis and the corresponding conclusions of the tweets time series. Used declared functions:
 moving_sum(pd_series):
 argument: Pandas DataSeries,
@@ -89,7 +89,7 @@ title - a title of the plot; default is equal to ‘Tweets’
 
 x_axis - a name of the OX axis
 - output: a plot from the Plotly library
-Social networks analysis
+## Social networks analysis
 The social network analysis is stored in “RT_ukraine_graphs.ipynb” jupyter notebook. It contains analysis of network graphs, network motifs and sentimental distribution of information. Used declared functions:
 ((networkx graph is the input of each of these functions))
 
