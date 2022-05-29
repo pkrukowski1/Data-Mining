@@ -5,8 +5,8 @@ MSc Data Science Project
 Data Mining Course
 
 Contributors:
-Marcin Świątkowski
-Patryk Krukowski
+Marcin Świątkowski,
+Patryk Krukowski,
 Miłosz Włoch
 
 # Twitter Sentiment Analysis in Polish 
@@ -62,42 +62,17 @@ Translating english words from the NEGATE set and the BOOSTER_DICT dictionary in
 * function main() - driver function.
 ## Time series analysis
 The time series analysis is stored in the  “Time_series_analysis.ipynb” jupyter notebook. There is an analysis and the corresponding conclusions of the tweets time series. Used declared functions:
-moving_sum(pd_series):
-argument: Pandas DataSeries,
-output: array-like object, the function returns array-like object with moving sum of pd_series
-plot_time_series(time_series, text = 'tension', title = 'Tweets', x_axis = 'Days')
-- arguments: 
-time_series - Pandas DataFrame with two columns (values of time series and an index - time)
- 
-text - a string which is appended at the end of  word “Total “; a name of the OY axis; default is equal to ‘tension’
-
-title - a title of the plot; default is equal to ‘Tweets’
-
-x_axis - a name of the OX axis
-- output: a plot from the Plotly library
+* moving_sum(pd_series): argument: Pandas DataSeries, output: array-like object, the function returns array-like object with moving sum of pd_series,
+* plot_time_series(time_series, text = 'tension', title = 'Tweets', x_axis = 'Days'), arguments: time_series - Pandas DataFrame with two columns (values of time series and an index - time), text - a string which is appended at the end of  word “Total “; a name of the OY axis; default is equal to ‘tension’, title - a title of the plot; default is equal to ‘Tweets’, x_axis - a name of the OX axis, output: a plot from the Plotly library.
 ## Social networks analysis
-The social network analysis is stored in “RT_ukraine_graphs.ipynb” jupyter notebook. It contains analysis of network graphs, network motifs and sentimental distribution of information. Used declared functions:
-((networkx graph is the input of each of these functions))
-
-add_edges_to_graph(graph)
-adds edges to newly created graph
-transforms given graph adding edges to it
-pseudo_diameter(graph)
-calculates pseudo diameter (pseudo because our graph is not connected)
-returns pseudo diameter
-summary(graph)
-prints summary of given graph
-plot_degrees(graph)
-plots bar chart of graph degrees
-plot_centrality(graph)
-plots bar chart of graph centrality
-get_adj_matrix(graph)
-returns adjacency matrix of given graph
-plot_triplets(graph, order=[*range(0,16,1)])
-input ‘order’ is a list of plotted motifs. Default it is set to plots all seventeen.
-calculates and plots network motifs (triplets) of given graph
-count_degrees(graph)
-calculates and returns degrees for nodes in given graph
-plot_chains(graph)
-plots chains of nodes from given graph (works only for undirected graph and with no parallel edges)
+The social network analysis is stored in “RT_ukraine_graphs.ipynb” jupyter notebook. It contains analysis of network graphs, network motifs and sentimental distribution of information. Used declared functions: (input - networkx graph is the input of each of these functions):
+* add_edges_to_graph(graph) - adds edges to newly created graph, transforms given graph adding edges to it
+* pseudo_diameter(graph) - calculates pseudo diameter (pseudo because our graph is not connected), returns pseudo diameter,
+* summary(graph) - prints summary of given graph,
+* plot_degrees(graph) - plots bar chart of graph degrees,
+* plot_centrality(graph) - plots bar chart of graph centrality,
+* get_adj_matrix(graph) - returns adjacency matrix of given graph,
+* plot_triplets(graph, order=[range(0,16,1)]) -  input ‘order’ is a list of plotted motifs, default it is set to plots all seventeen; calculates and plots network motifs (triplets) of given graph,
+* count_degrees(graph) - calculates and returns degrees for nodes in given graph,
+* plot_chains(graph) - plots chains of nodes from given graph (works only for undirected graph and with no parallel edges).
 
