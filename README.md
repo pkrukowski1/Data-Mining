@@ -50,11 +50,10 @@ After we collected all the required data we needed to translate tweets’ text i
 ## Executed Vader algorithm modifications
 To achieve more information about how the Vader algorithm works please be sure to visit the following website: https://www.nltk.org/_modules/nltk/sentiment/vader.html
 It was required to prepare this list of changes:
-* VaderConstants class:
-** We have decided to get rid of English idioms and every instruction connected to them.
+* VaderConstants class - we have decided to get rid of English idioms and every instruction connected to them.
 Translating english words from the NEGATE set and the BOOSTER_DICT dictionary into polish language and appending some new words that can easily indicate specific emotions of the society.
-2.2. SentiText class:
-		-  To avoid an exception named AttributeError we have decided to add try - except block. The problem was related to converting float type to string type.
+* SentiText class:
+		*  To avoid an exception named AttributeError we have decided to add try - except block. The problem was related to converting float type to string type.
 	2.3. SentimentIntensityAnalyzer class:
 We had to match corresponding Polish words to English words, for example “but” -> “ale” etc.
 	2.4. SocialTension class - that is the only one class which was added by us to the Vader package. The main target of this class was to measure tension of given tweets as an array-like object. The constructor can be invoked by passing array-like objects as an argument. In the result of this operation we have access to an attribute called text_array which is a DataFrame type. We have defined following methods:
