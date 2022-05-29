@@ -50,8 +50,8 @@ After we collected all the required data we needed to translate tweets’ text i
 ## Executed Vader algorithm modifications
 To achieve more information about how the Vader algorithm works please be sure to visit the following website: https://www.nltk.org/_modules/nltk/sentiment/vader.html
 It was required to prepare this list of changes:
-2.1. VaderConstants class:
-We have decided to get rid of English idioms and every instruction connected to them.
+* VaderConstants class:
+** We have decided to get rid of English idioms and every instruction connected to them.
 Translating english words from the NEGATE set and the BOOSTER_DICT dictionary into polish language and appending some new words that can easily indicate specific emotions of the society.
 2.2. SentiText class:
 		-  To avoid an exception named AttributeError we have decided to add try - except block. The problem was related to converting float type to string type.
