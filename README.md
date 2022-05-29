@@ -32,27 +32,18 @@ The purpose of our project is to analyze tweets from Twitter with regards to a s
 * tweets_sentiments.csv - consists of tweets’ content and their sentiments,
 * ukraine-flag-national-europe-emblem-map-icon-illustration - a photo for word cloud
 * vader_lexicon_translated.txt - dictionary with polish words and emoticons with associated weights, 
-* odm.txt (https://sjp.pl/sl/odmiany/) - includes every form of polish words
+* odm.txt (https://sjp.pl/sl/odmiany/) - includes every form of polish words.
+
 ## Data preprocessing
 Downloading tweets:
 We downloaded tweets using Twitter API. We choose these categories:  
-tweet_id
-used for ensuring that our database contains only unique tweets (or retweets)
-text
-main and the most important part of tweet
-used for sentiment classification
-for retweets: ‘text’ contains information about real author (source) of retweet
-retweet_count
-number of retweets of given tweet
-created_at
-date of creation of tweet or retweet of retweet
-author
-author of the tweet. It is important to remember that author means the user on which feed given tweet appears. It is not necessarily real author of tweet but it can be just the user who retweeted given tweet
-author and source are used for creating network graphs
-location
-location of the user
-is_verified
-information whether user is verified or not
+* tweet_id - used for ensuring that our database contains only unique tweets (or retweets),
+* text - main and the most important part of tweet used for sentiment classification for retweets: ‘text’ contains information about real author (source) of retweet,
+* retweet_count - number of retweets of given tweet,
+* created_at - date of creation of tweet or retweet of retweet
+* author - author of the tweet. It is important to remember that author means the user on which feed given tweet appears. It is not necessarily real author of tweet but it can be just the user who retweeted given tweet author and source are used for creating network graphs,
+* location - location of the user,
+* is_verified - information whether user is verified or not.
 
 After we collected all the required data we needed to translate tweets’ text into polish language (translate_words.ipynb). Our algorithm uses odm.txt to lemmatize tweets (lemmatize_tweets.ipynb). The Odm.txt file consists of plenty of different Polish words with all of their forms. As we processed our data, then we could use the modified Vader algorithm to obtain tweets sentiments: –1 for negative sentiment, 0 for neutral one and 1 for positive one. The output of the algorithm was saved into the tweets_sentiments.csv file. 
 
