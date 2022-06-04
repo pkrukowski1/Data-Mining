@@ -3,8 +3,7 @@ import SentimentIntensityAnalyzer
 
 class SocialTension:
     """"
-    Class to assign 1, 0 or -1 value in context of sentiment. To get output, you need to invoke constructor
-    SocialTension(text_array) in __main__ function and then
+    Class to assign 1, 0 or -1 value in context of sentiment.
     """
 
     def __init__(self, text_array):
